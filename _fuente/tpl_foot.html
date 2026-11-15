@@ -1,0 +1,51 @@
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <div class="brand"><img class="hex" src="{{root}}assets/emblema.webp" alt="" width="44" height="44"><span class="brand-txt"><b>ELLIAN LESSEL</b></span></div>
+        <img class="f" src="{{root}}assets/firma.webp" alt="" width="140" height="20">
+        <p>{{foot_tag}}</p>
+      </div>
+      <div>
+        <h4>{{foot_books}}</h4>
+        <ul>
+          <li><a class="js-amz" data-asin="B0HNRZXG5X" href="https://www.amazon.com/dp/B0HNRZXG5X" target="_blank" rel="noopener">Ad Primordia — Volumen I: Despertar</a></li>
+          <li><a class="js-amz" data-asin="B0HQFPY5QG" href="https://www.amazon.com/dp/B0HQFPY5QG" target="_blank" rel="noopener">El tablero de césped</a></li>
+          <li><a class="js-amz" data-asin="B0H232S4X7" href="https://www.amazon.com/dp/B0H232S4X7" target="_blank" rel="noopener">La eficiencia espaciotemporal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{{foot_comm}}</h4>
+        <ul>
+          <li><a class="js-ig" href="https://www.instagram.com/ellian.lessel/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a class="js-gr" href="https://www.goodreads.com/user/show/206427856-ellian-lessel" target="_blank" rel="noopener">Goodreads</a></li>
+          <li><a href="{{news_url}}">{{nav_news}}</a></li>
+          <li><a href="{{home}}#suscribir">{{foot_list}}</a></li>
+          <li><button type="button" class="linkbtn js-privacy">{{privacy}}</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>{{rights}}</span>
+      <span>{{made_in}}</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="{{totop}}">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mtitle" tabindex="-1" id="dialog">
+    <button class="x" id="mclose" aria-label="{{close}}">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div id="mbody"></div>
+  </div>
+</div>
+<script>window.SITE={{site_json}};</script>
+<script src="{{root}}assets/common.js"></script>
+{{page_script}}
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://suarezlese-ship-it.github.io/Ellian_Lessel/sitemap.xml
