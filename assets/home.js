@@ -65,12 +65,12 @@ var V=H.vars, vmain=document.getElementById('vmain'), valt=document.getElementBy
 Object.keys(SYM).forEach(function(k){
   var v=V[k], alt=v[0]!=='f', b=document.createElement('button');
   b.className='vbtn'+(alt?' alt':''); b.dataset.v=k; b.setAttribute('aria-pressed','false');
-  b.innerHTML='<b>'+SYM[k]+'</b><span>'+esc(v[1])+'</span>'; (alt?valt:vmain).appendChild(b);
+  b.innerHTML='<b class="notranslate" translate="no">'+SYM[k]+'</b><span>'+esc(v[1])+'</span>'; (alt?valt:vmain).appendChild(b);
 });
 [].forEach.call(document.querySelectorAll('.eq .v'),function(b){b.setAttribute('aria-label',V[b.dataset.v][1]);});
 function showVar(k){
   var v=V[k],alt=v[0]!=='f'; vpanel.className='vpanel'+(alt?' alt':'');
-  vpanel.innerHTML='<div class="fade"><div class="sym">'+SYM[k]+'</div><span class="typ">'+esc(alt?T.v_comp:T.v_fund)+'</span><h4>'+esc(v[1])+'</h4><p>'+esc(v[2])+'</p><dl><dt>'+esc(T.v_law)+'</dt><dd>'+esc(v[3])+'</dd><dt>'+esc(T.v_hum)+'</dt><dd>'+esc(v[4])+'</dd></dl></div>';
+  vpanel.innerHTML='<div class="fade"><div class="sym notranslate" translate="no">'+SYM[k]+'</div><span class="typ">'+esc(alt?T.v_comp:T.v_fund)+'</span><h4>'+esc(v[1])+'</h4><p>'+esc(v[2])+'</p><dl><dt>'+esc(T.v_law)+'</dt><dd>'+esc(v[3])+'</dd><dt>'+esc(T.v_hum)+'</dt><dd>'+esc(v[4])+'</dd></dl></div>';
   [].forEach.call(document.querySelectorAll('.vbtn'),function(b){b.setAttribute('aria-pressed',String(b.dataset.v===k));});
   [].forEach.call(document.querySelectorAll('.eq .v'),function(b){b.classList.toggle('on',b.dataset.v===k);});
 }
