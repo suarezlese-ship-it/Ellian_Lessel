@@ -390,10 +390,10 @@ footer.site{border-top:1px solid #ffffff12;padding:3rem 0 2rem;background:#070a1
       <a href="#saga">Saga Ad Primordia</a>
       <a href="#autor">Sobre el autor</a>
       <div class="social">
-        <a class="ico js-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram de Ellian Lessel" title="Instagram">
+        <a class="ico js-ig" href="https://www.instagram.com/ellian.lessel/" target="_blank" rel="noopener" aria-label="Instagram de Ellian Lessel" title="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
         </a>
-        <a class="ico js-gr" href="#" target="_blank" rel="noopener" aria-label="Goodreads de Ellian Lessel" title="Goodreads">
+        <a class="ico js-gr" href="https://www.goodreads.com/user/show/206427856-ellian-lessel" target="_blank" rel="noopener" aria-label="Goodreads de Ellian Lessel" title="Goodreads">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M16 4v10a5 5 0 0 1-9.2 2.7"/><circle cx="11.5" cy="9" r="4.5"/></svg>
         </a>
       </div>
@@ -416,7 +416,7 @@ footer.site{border-top:1px solid #ffffff12;padding:3rem 0 2rem;background:#070a1
         <a class="btn btn-gold" href="#catalogo">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
           Explorar obras</a>
-        <a class="btn btn-ghost js-ig" href="#" target="_blank" rel="noopener">
+        <a class="btn btn-ghost js-ig" href="https://www.instagram.com/ellian.lessel/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
           Seguir en Instagram</a>
       </div>
@@ -591,10 +591,10 @@ footer.site{border-top:1px solid #ffffff12;padding:3rem 0 2rem;background:#070a1
         <li>MBA</li><li>Magíster en Estrategia Nacional</li><li>Esp. Inteligencia Estratégica</li><li>Esp. Seguridad y Defensa</li><li>Prof. Historia de los Conflictos Armados</li><li>Lic. Ciencias Militares</li>
       </ul>
       <div class="cta">
-        <a class="btn btn-gold js-ig" href="#" target="_blank" rel="noopener">
+        <a class="btn btn-gold js-ig" href="https://www.instagram.com/ellian.lessel/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
           Seguir en Instagram</a>
-        <a class="btn btn-ghost js-gr" href="#" target="_blank" rel="noopener">
+        <a class="btn btn-ghost js-gr" href="https://www.goodreads.com/user/show/206427856-ellian-lessel" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M16 4v10a5 5 0 0 1-9.2 2.7"/><circle cx="11.5" cy="9" r="4.5"/></svg>
           <span class="js-gr-label">Goodreads</span></a>
       </div>
@@ -641,8 +641,8 @@ footer.site{border-top:1px solid #ffffff12;padding:3rem 0 2rem;background:#070a1
       <div>
         <h4>Comunidad</h4>
         <ul>
-          <li><a class="js-ig" href="#" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a class="js-gr" href="#" target="_blank" rel="noopener"><span class="js-gr-label">Goodreads</span></a></li>
+          <li><a class="js-ig" href="https://www.instagram.com/ellian.lessel/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a class="js-gr" href="https://www.goodreads.com/user/show/206427856-ellian-lessel" target="_blank" rel="noopener"><span class="js-gr-label">Goodreads</span></a></li>
           <li><a href="#suscribir">Lista de lectores</a></li>
           <li><button type="button" class="linkbtn js-privacy">Política de privacidad</button></li>
         </ul>
@@ -903,7 +903,7 @@ function setLinks(sel,url,pendingLabel){
 }
 setLinks('.js-ig',CONFIG.instagram,'Instagram: enlace en preparación');
 setLinks('.js-gr',CONFIG.goodreads,'Goodreads: perfil en aprobación');
-if(!CONFIG.goodreads){[].forEach.call(document.querySelectorAll('.js-gr-label'),function(s){s.textContent='Goodreads (próximamente)';});}
+if(!CONFIG.goodreads){[].forEach.call(document.querySelectorAll('.js-gr-label'),function(s){s.textContent='Goodreads';});}
 var mail=CONFIG.email[0]+'@'+CONFIG.email[1];
 [].forEach.call(document.querySelectorAll('.js-mail'),function(a){a.href='mailto:'+mail;a.textContent=mail;});
 
