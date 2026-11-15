@@ -8,6 +8,7 @@ from i18n_blog import BLOG_PATH, HOME_PATH, CATS, CAT_COLOR, B, fmt_date
 from posts_es import POSTS_ES
 from posts_en import POSTS_EN
 from posts_pt import POSTS_PT
+import refs as REFS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, 'out')
@@ -47,7 +48,7 @@ def common_ctx(lang, path, kind, pid=None, title=None, desc=None, og_type='websi
     alt_rel = {l: (root + a) if a else (root or './') for l, a in alts.items()}
     hreflang = '\n'.join(f'<link rel="alternate" hreflang="{S["html_lang"][l]}" href="{BASE}{a}">' for l, a in alts.items())
     hreflang += f'\n<link rel="alternate" hreflang="x-default" href="{BASE}{alts["es"]}">'
-    switch = ''.join(f'<a href="{alt_rel[l]}" hreflang="{S["html_lang"][l]}" lang="{S["html_lang"][l]}" data-setlang="{l}" title="{LANG_FULL[l]}"'
+    switch = ''.join(f'<a href="{alt_rel[l]}?lang={l}" hreflang="{S["html_lang"][l]}" lang="{S["html_lang"][l]}" data-setlang="{l}" title="{LANG_FULL[l]}"'
                      + (' aria-current="true"' if l == lang else '') + f'>{LANG_NAME[l]}</a>' for l in LANGS)
     tjs = dict(S['js'][lang]); tjs.update({k: S[k][lang] for k in JS_KEYS})
     site = {'lang': lang, 'root': root, 't': tjs, 'privacy': S['privacy_html'][lang], 'cart': CART}
@@ -155,6 +156,8 @@ def build_post(lang, p):
         rel_html = (f'<aside class="related"><img src="{root}assets/{img}" alt="" width="110" height="165"><div><p class="kicker">{B["related"][lang]}</p>'
                     f'<h3 lang="es">{FULL[k]}</h3>' + (f'<p class="gloss">{html.escape(gloss)}</p>' if gloss else '') +
                     f'<p><a class="btn btn-gold js-amz" data-asin="{ASIN[k]}" href="https://www.amazon.com/dp/{ASIN[k]}" target="_blank" rel="noopener">{CART}{S["buy"][lang]}</a></p></div></aside>')
+    rl = REFS.refs(p['id'], lang)
+    refs_html = (f'<section class="refs" aria-labelledby="r-h"><h2 id="r-h">{REFS.TITLE[lang]}</h2><ul>' + ''.join(f'<li>{r}</li>' for r in rl) + f'</ul><p class="refs-note">{REFS.NOTE[lang]}</p></section>') if rl else ''
     body = f'''<main id="main"><section><div class="wrap"><article class="article">
   <a class="backlink" href="{root}{BLOG_PATH[lang]}">{B['back'][lang]}</a><br>
   <span class="cat cat-{CAT_COLOR[cat]}">{CATS[cat][lang]}</span>
@@ -166,6 +169,7 @@ def build_post(lang, p):
   <section class="questions" aria-labelledby="q-h"><h2 id="q-h">{B['q_title'][lang]}</h2><ol>{qs}</ol>
     <a class="btn btn-ghost" href="{root}{BLOG_PATH[lang]}#buzon">{B['q_cta'][lang]} →</a></section>
   {rel_html}
+  {refs_html}
   <div class="share"><span>{B['share'][lang]}:</span>
     <a href="https://wa.me/?text={html.escape(p['title'])}%20{BASE}{path}" target="_blank" rel="noopener">WhatsApp</a>
     <a href="https://www.facebook.com/sharer/sharer.php?u={BASE}{path}" target="_blank" rel="noopener">Facebook</a>

@@ -22,13 +22,19 @@
 <meta name="twitter:image" content="{{og_image}}">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Cpolygon points=%2750,3 91,26 91,74 50,97 9,74 9,26%27 fill=%27%230B0F19%27 stroke=%27%23D4A72C%27 stroke-width=%276%27/%3E%3Cpath d=%27M50 22v56M28 50h44M34 34l32 32M66 34L34 66%27 stroke=%27%23D4A72C%27 stroke-width=%275%27/%3E%3C/svg%3E">
 <script>
-/* Detección de idioma: solo en la primera visita, respeta la elección guardada y no afecta a buscadores */
+/* Idioma: la dirección de la página manda. Solo la versión en español (la predeterminada) puede redirigir,
+   y solo si el lector no eligió idioma. Las versiones /en/ y /pt/ nunca redirigen. */
 (function(){try{
-  var ALT={{alt_json}}, cur="{{lang}}", key="el_lang", saved=localStorage.getItem(key);
+  var ALT={{alt_json}}, cur="{{lang}}", K="el_lang", st=null;
+  try{st=localStorage;}catch(e){}
+  var q=(location.search.match(/[?&]lang=(es|en|pt)\b/)||[])[1];
+  if(q){ try{if(st) st.setItem(K,q);}catch(e){} try{history.replaceState(null,'',location.pathname+location.hash);}catch(e){} return; }
   if(/bot|crawl|spider|slurp|google|bing|yandex|duckduck|baidu|facebookexternalhit|preview/i.test(navigator.userAgent)) return;
+  var saved=st?st.getItem(K):null;
+  if(cur!=="es"){ if(st&&!saved) st.setItem(K,cur); return; }
   var want=saved;
-  if(!want){var l=((navigator.languages&&navigator.languages[0])||navigator.language||"es").toLowerCase().slice(0,2); want=(l==="en"||l==="pt")?l:"es"; localStorage.setItem(key,want);}
-  if(want!==cur && ALT[want] && !sessionStorage.getItem("el_stay")) location.replace(ALT[want]+location.hash);
+  if(!want){var l=((navigator.languages&&navigator.languages[0])||navigator.language||"es").toLowerCase().slice(0,2); want=(l==="en"||l==="pt")?l:"es";}
+  if(want!=="es" && ALT[want]) location.replace(ALT[want]+location.hash);
 }catch(e){}})();
 </script>
 <script type="application/ld+json">{{jsonld}}</script>

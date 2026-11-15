@@ -25,13 +25,19 @@
 <meta name="twitter:image" content="https://suarezlese-ship-it.github.io/Ellian_Lessel/og-ellian-lessel.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Cpolygon points=%2750,3 91,26 91,74 50,97 9,74 9,26%27 fill=%27%230B0F19%27 stroke=%27%23D4A72C%27 stroke-width=%276%27/%3E%3Cpath d=%27M50 22v56M28 50h44M34 34l32 32M66 34L34 66%27 stroke=%27%23D4A72C%27 stroke-width=%275%27/%3E%3C/svg%3E">
 <script>
-/* Detección de idioma: solo en la primera visita, respeta la elección guardada y no afecta a buscadores */
+/* Idioma: la dirección de la página manda. Solo la versión en español (la predeterminada) puede redirigir,
+   y solo si el lector no eligió idioma. Las versiones /en/ y /pt/ nunca redirigen. */
 (function(){try{
-  var ALT={"es": "../../novedades/el-futbol-que-se-juega-en-64-casillas.html", "en": "../../en/news/soccer-played-on-64-squares.html", "pt": "../../pt/novidades/o-futebol-jogado-em-64-casas.html"}, cur="pt", key="el_lang", saved=localStorage.getItem(key);
+  var ALT={"es": "../../novedades/el-futbol-que-se-juega-en-64-casillas.html", "en": "../../en/news/soccer-played-on-64-squares.html", "pt": "../../pt/novidades/o-futebol-jogado-em-64-casas.html"}, cur="pt", K="el_lang", st=null;
+  try{st=localStorage;}catch(e){}
+  var q=(location.search.match(/[?&]lang=(es|en|pt)\b/)||[])[1];
+  if(q){ try{if(st) st.setItem(K,q);}catch(e){} try{history.replaceState(null,'',location.pathname+location.hash);}catch(e){} return; }
   if(/bot|crawl|spider|slurp|google|bing|yandex|duckduck|baidu|facebookexternalhit|preview/i.test(navigator.userAgent)) return;
+  var saved=st?st.getItem(K):null;
+  if(cur!=="es"){ if(st&&!saved) st.setItem(K,cur); return; }
   var want=saved;
-  if(!want){var l=((navigator.languages&&navigator.languages[0])||navigator.language||"es").toLowerCase().slice(0,2); want=(l==="en"||l==="pt")?l:"es"; localStorage.setItem(key,want);}
-  if(want!==cur && ALT[want] && !sessionStorage.getItem("el_stay")) location.replace(ALT[want]+location.hash);
+  if(!want){var l=((navigator.languages&&navigator.languages[0])||navigator.language||"es").toLowerCase().slice(0,2); want=(l==="en"||l==="pt")?l:"es";}
+  if(want!=="es" && ALT[want]) location.replace(ALT[want]+location.hash);
 }catch(e){}})();
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "O futebol jogado em 64 casas", "description": "Todos dizemos que o futebol é como o xadrez. Poucos se perguntam o que aconteceria se fosse de verdade. El tablero de césped transforma essa frase em método.", "datePublished": "2026-11-15", "inLanguage": "pt-BR", "author": {"@type": "Person", "@id": "https://suarezlese-ship-it.github.io/Ellian_Lessel/#autor", "name": "Ellian Lessel", "url": "https://suarezlese-ship-it.github.io/Ellian_Lessel/", "sameAs": ["https://www.instagram.com/ellian.lessel/", "https://www.goodreads.com/user/show/206427856-ellian-lessel"], "homeLocation": {"@type": "Place", "name": "Montevideo, Uruguay"}}, "image": "https://suarezlese-ship-it.github.io/Ellian_Lessel/og-ellian-lessel.jpg", "mainEntityOfPage": "https://suarezlese-ship-it.github.io/Ellian_Lessel/pt/novidades/o-futebol-jogado-em-64-casas.html"}</script>
@@ -56,7 +62,7 @@
       <a href="../../pt/#saga">Saga Ad Primordia</a>
       <a href="../../pt/novidades/" class="on-page">Novidades</a>
       <a href="../../pt/#autor">Sobre o autor</a>
-      <div class="langs" role="group" aria-label="Idioma"><a href="../../novedades/el-futbol-que-se-juega-en-64-casillas.html" hreflang="es" lang="es" data-setlang="es" title="Español">ES</a><a href="../../en/news/soccer-played-on-64-squares.html" hreflang="en" lang="en" data-setlang="en" title="English">EN</a><a href="../../pt/novidades/o-futebol-jogado-em-64-casas.html" hreflang="pt-BR" lang="pt-BR" data-setlang="pt" title="Português" aria-current="true">PT</a></div>
+      <div class="langs" role="group" aria-label="Idioma"><a href="../../novedades/el-futbol-que-se-juega-en-64-casillas.html?lang=es" hreflang="es" lang="es" data-setlang="es" title="Español">ES</a><a href="../../en/news/soccer-played-on-64-squares.html?lang=en" hreflang="en" lang="en" data-setlang="en" title="English">EN</a><a href="../../pt/novidades/o-futebol-jogado-em-64-casas.html?lang=pt" hreflang="pt-BR" lang="pt-BR" data-setlang="pt" title="Português" aria-current="true">PT</a></div>
       <div class="social">
         <a class="ico js-ig" href="https://www.instagram.com/ellian.lessel/" target="_blank" rel="noopener" aria-label="Instagram de Ellian Lessel" title="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
@@ -77,7 +83,7 @@
   <figure><img src="../../assets/blog-tablero.svg" alt="" width="1200" height="630"><figcaption>Ilustração original gerada com IA para este site.</figcaption></figure>
   <div class="prose">
 <p>Poucas comparações se repetem tanto no futebol quanto esta: “o jogo foi uma partida de xadrez”. Dizem-na os comentaristas quando a partida trava, os treinadores quando vencem pela estratégia e os torcedores quando não sabem explicar por que seu time não chegou ao gol. É uma frase cômoda. Sugere inteligência, paciência, cálculo. Mas quase nunca é examinada.</p>
-<p><em>El tablero de césped</em> (“O tabuleiro de grama”) começa exatamente aí, no ponto em que a frase se esgota. Sua proposta é levá-la a sério: se o futebol é xadrez, deve ser possível descrevê-lo com a mesma precisão com que se descreve uma partida.</p>
+<p><em>El tablero de césped</em> (“O tabuleiro de grama”; Lessel, 2026) começa exatamente aí, no ponto em que a frase se esgota. Sua proposta é levá-la a sério: se o futebol é xadrez, deve ser possível descrevê-lo com a mesma precisão com que se descreve uma partida.</p>
 <h2>Um campo com coordenadas</h2>
 <p>O primeiro passo é geométrico. O livro sobrepõe ao campo um tabuleiro de 64 casas de 13 por 9 metros. De repente, as expressões vagas do futebol ganham exatidão. “Pelo meio” vira D4. “Perto da área” vira F6. Uma diagonal deixa de ser uma intuição e passa a ser uma linha que se pode traçar.</p>
 <p>Isso não é capricho. No xadrez, a notação permite registrar, analisar e comparar partidas disputadas há um século. Uma linguagem comum para o espaço do futebol permitiria algo parecido: falar do jogo com menos adjetivos e mais coordenadas.</p>
@@ -97,6 +103,7 @@
   <section class="questions" aria-labelledby="q-h"><h2 id="q-h">Deixamos estas perguntas</h2><ol><li>Que jogador você conhece que mais muda de peça durante uma partida?</li><li>Você se lembra de um jogo em que um time deixou o adversário em zugzwang?</li><li>Se tivesse de atribuir uma peça de xadrez ao seu jogador favorito, qual seria?</li></ol>
     <a class="btn btn-ghost" href="../../pt/novidades/#buzon">Responda na caixa do leitor →</a></section>
   <aside class="related"><img src="../../assets/tablero.webp" alt="" width="110" height="165"><div><p class="kicker">O livro deste texto</p><h3 lang="es">El tablero de césped. Sistema operativo de ajedrez dinámico aplicado al fútbol</h3><p class="gloss">“O tabuleiro de grama: sistema operacional de xadrez dinâmico aplicado ao futebol” · edição em espanhol</p><p><a class="btn btn-gold js-amz" data-asin="B0HQFPY5QG" href="https://www.amazon.com/dp/B0HQFPY5QG" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>Comprar na Amazon</a></p></div></aside>
+  <section class="refs" aria-labelledby="r-h"><h2 id="r-h">Referências</h2><ul><li>Lessel, E. (2026). <em>El tablero de césped: Sistema operativo de ajedrez dinámico aplicado al fútbol</em> [O tabuleiro de grama: sistema operacional de xadrez dinâmico aplicado ao futebol].</li></ul><p class="refs-note">Citações no formato APA (7.ª ed.). As passagens bíblicas são citadas apenas no texto.</p></section>
   <div class="share"><span>Compartilhar:</span>
     <a href="https://wa.me/?text=O futebol jogado em 64 casas%20https://suarezlese-ship-it.github.io/Ellian_Lessel/pt/novidades/o-futebol-jogado-em-64-casas.html" target="_blank" rel="noopener">WhatsApp</a>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://suarezlese-ship-it.github.io/Ellian_Lessel/pt/novidades/o-futebol-jogado-em-64-casas.html" target="_blank" rel="noopener">Facebook</a>
