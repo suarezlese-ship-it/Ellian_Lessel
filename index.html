@@ -546,9 +546,10 @@ footer.site{border-top:1px solid #ffffff12;padding:3rem 0 2rem;background:#070a1
         <h3>Avisame cuando salga <em>Creación</em></h3>
         <p>Recibí un único correo cuando el Volumen II esté disponible, y las novedades de los próximos libros. Sin spam; te das de baja cuando quieras.</p>
       </div>
-      <form name="boletin" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="js-form" novalidate>
-        <input type="hidden" name="form-name" value="boletin">
-        <p class="hp"><label>No completar: <input name="bot-field"></label></p>
+      <form name="boletin" method="POST" action="https://formspree.io/f/xbgogydj" class="js-form" novalidate>
+        <input type="hidden" name="formulario" value="Lista de lectores (aviso de Creación)">
+        <input type="hidden" name="_subject" value="Nueva suscripción — web Ellian Lessel">
+        <p class="hp"><label>No completar: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
         <div class="row">
           <label class="sr" for="sub-email">Correo electrónico</label>
           <input id="sub-email" type="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
@@ -603,9 +604,10 @@ footer.site{border-top:1px solid #ffffff12;padding:3rem 0 2rem;background:#070a1
       <div class="contact">
         <h3>Escribile al autor</h3>
         <p style="color:var(--mut);margin:0">Lectores, prensa, clubes de lectura e instituciones. También podés escribir a <a class="js-mail" href="#">[correo]</a>.</p>
-        <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="js-form" novalidate>
-          <input type="hidden" name="form-name" value="contacto">
-          <p class="hp"><label>No completar: <input name="bot-field"></label></p>
+        <form name="contacto" method="POST" action="https://formspree.io/f/xbgogydj" class="js-form" novalidate>
+          <input type="hidden" name="formulario" value="Contacto">
+          <input type="hidden" name="_subject" value="Nuevo mensaje de contacto — web Ellian Lessel">
+          <p class="hp"><label>No completar: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
           <div class="row">
             <label class="sr" for="c-name">Nombre</label><input id="c-name" type="text" name="nombre" placeholder="Nombre" autocomplete="name" required>
             <label class="sr" for="c-email">Correo</label><input id="c-email" type="email" name="email" placeholder="Correo electrónico" autocomplete="email" required>
@@ -907,17 +909,17 @@ if(!CONFIG.goodreads){[].forEach.call(document.querySelectorAll('.js-gr-label'),
 var mail=CONFIG.email[0]+'@'+CONFIG.email[1];
 [].forEach.call(document.querySelectorAll('.js-mail'),function(a){a.href='mailto:'+mail;a.textContent=mail;});
 
-/* ---------- formularios (Netlify Forms) ---------- */
+/* ---------- formularios (Formspree) ---------- */
 [].forEach.call(document.querySelectorAll('.js-form'),function(form){
   form.addEventListener('submit',function(e){
     e.preventDefault(); var msg=form.querySelector('.formmsg'); msg.className='formmsg';
     if(!form.checkValidity()){msg.classList.add('err');msg.textContent='Revisá los campos y aceptá la política de privacidad.';var bad=form.querySelector(':invalid');if(bad)bad.focus();return;}
-    var data=new URLSearchParams(new FormData(form)).toString();
+    
     msg.textContent='Enviando…';
     if(location.protocol==='file:'||location.protocol==='blob:'){msg.classList.add('err');msg.innerHTML='Vista previa: el formulario se activa al publicar el sitio. Mientras tanto, escribí a <a href="mailto:'+mail+'">'+mail+'</a>.';return;}
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data})
+    fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
      .then(function(r){if(!r.ok) throw 0; form.reset(); msg.classList.add('ok'); msg.textContent=form.name==='boletin'?'¡Listo! Te avisaremos cuando salga Creación.':'Mensaje enviado. ¡Gracias por escribir!';})
-     .catch(function(){msg.classList.add('err'); msg.innerHTML='El formulario se activa al publicar el sitio. Mientras tanto, escribí a <a href="mailto:'+mail+'">'+mail+'</a>.';});
+     .catch(function(){msg.classList.add('err'); msg.innerHTML='No se pudo enviar. Probá de nuevo en unos minutos o escribí a <a href="mailto:'+mail+'">'+mail+'</a>.';});
   });
 });
 
@@ -926,7 +928,7 @@ var PRIVACY='<div class="legaltext"><h2 id="mtitle">Política de privacidad</h2>
  '<p><strong>Responsable.</strong> Ellian Lessel, autor con domicilio en Montevideo, Uruguay. Contacto: '+mail+'.</p>'+
  '<p><strong>Qué datos se recogen.</strong> Solo los que escribís en los formularios: tu correo electrónico (lista de lectores) y, en el formulario de contacto, tu nombre y tu mensaje.</p>'+
  '<p><strong>Para qué.</strong> Para avisarte de nuevos libros y novedades del autor, y para responder tus mensajes. No se usan con otro fin, no se venden ni se ceden a terceros.</p>'+
- '<p><strong>Dónde se guardan.</strong> En el servicio de alojamiento del sitio, que procesa los formularios por cuenta del autor.</p>'+
+ '<p><strong>Dónde se guardan.</strong> En Formspree, el servicio que recibe los formularios de este sitio y los reenvía al correo del autor.</p>'+
  '<p><strong>Tus derechos.</strong> Podés pedir acceso, rectificación, actualización o eliminación de tus datos, o darte de baja de la lista, escribiendo al correo indicado. Esta política se rige por la Ley n.º 18.331 de Protección de Datos Personales de la República Oriental del Uruguay.</p>'+
  '<p><strong>Enlaces externos.</strong> Los botones de compra y de redes llevan a Amazon, Instagram y Goodreads, que aplican sus propias políticas.</p>'+
  '<p style="color:var(--mut)">Última actualización: noviembre de 2026.</p></div>';
