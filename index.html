@@ -22,7 +22,7 @@
   "@graph": [
     {"@type": "Person", "@id": "#autor", "name": "Ellian Lessel", "jobTitle": "Escritor",
      "email": "mailto:ellian.lessel@gmail.com", "homeLocation": {"@type": "Place", "name": "Montevideo, Uruguay"},
-     "alumniOf": [], "knowsAbout": ["Ciencia ficción", "Mitología comparada", "Estrategia", "Ajedrez", "Fútbol", "Astrofísica"]},
+     "sameAs": ["https://www.instagram.com/ellian.lessel/", "https://www.goodreads.com/user/show/206427856-ellian-lessel"], "knowsAbout": ["Ciencia ficción", "Mitología comparada", "Estrategia", "Ajedrez", "Fútbol", "Astrofísica"]},
     {"@type": "Book", "name": "Ad Primordia — Volumen I: Despertar", "author": {"@id": "#autor"}, "inLanguage": "es",
      "bookFormat": "https://schema.org/EBook", "isbn": "978-9915-44-774-2", "datePublished": "2026-10",
      "genre": ["Ciencia ficción", "Mitología"], "url": "https://www.amazon.es/dp/B0HNRZXG5X",
@@ -677,8 +677,8 @@ footer.site{border-top:1px solid #ffffff12;padding:3rem 0 2rem;background:#070a1
    CONFIGURACIÓN — completá estos enlaces y listo
    ========================================================= */
 var CONFIG = {
-  instagram: "",   // [[PENDIENTE]] p. ej. "https://www.instagram.com/ellianlessel"
-  goodreads: "",   // [[PENDIENTE]] perfil de autor cuando Goodreads lo apruebe
+  instagram: "https://www.instagram.com/ellian.lessel/",   // [[PENDIENTE]] p. ej. "https://www.instagram.com/ellianlessel"
+  goodreads: "https://www.goodreads.com/user/show/206427856-ellian-lessel",   // [[PENDIENTE]] perfil de autor cuando Goodreads lo apruebe
   email: ["ellian.lessel","gmail.com"]
 };
 
