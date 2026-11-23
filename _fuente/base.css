@@ -49,7 +49,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .ico[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
 .ico[aria-disabled="true"]:hover{transform:none;border-color:var(--line)}
 .burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--tx);cursor:pointer}
-@media (max-width:1179px){
+@media (max-width:1239px){
   .burger{display:inline-grid;place-items:center}
   .menu{position:fixed;inset:68px 0 auto 0;flex-direction:column;align-items:stretch;background:#0B0F19f5;padding:1rem 1.25rem 1.5rem;gap:.2rem;border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .3s;visibility:hidden}
   .menu.open{transform:none;visibility:visible}

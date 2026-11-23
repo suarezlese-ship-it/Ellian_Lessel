@@ -37,6 +37,8 @@ S = {
 'nav_author': {'es':'Sobre el autor','en':'About the Author','pt':'Sobre o autor'},
 'lang_label': {'es':'Idioma','en':'Language','pt':'Idioma'},
 'ig_aria': {'es':'Instagram de Ellian Lessel','en':'Ellian Lessel on Instagram','pt':'Instagram de Ellian Lessel'},
+'amz_author': {'es':'Página de autor en Amazon','en':'Amazon author page','pt':'Página de autor na Amazon'},
+'amz_aria': {'es':'Ellian Lessel en Amazon (página de autor)','en':'Ellian Lessel on Amazon (author page)','pt':'Ellian Lessel na Amazon (página de autor)'},
 'gr_aria': {'es':'Goodreads de Ellian Lessel','en':'Ellian Lessel on Goodreads','pt':'Goodreads de Ellian Lessel'},
 
 # ---------- hero ----------
@@ -108,7 +110,7 @@ S = {
  'es':'Seis Grados, del 0 al 5, con criterios físicos aplicables a cualquier civilización del universo. Tocá un Grado.',
  'en':'Six Grades, from 0 to 5, defined by physical criteria that apply to any civilization in the universe. Tap a Grade.',
  'pt':'Seis Graus, do 0 ao 5, com critérios físicos aplicáveis a qualquer civilização do universo. Toque em um Grau.'},
-'gr_aria': {'es':'Grados 0 a 5','en':'Grades 0 to 5','pt':'Graus 0 a 5'},
+'grades_aria': {'es':'Grados 0 a 5','en':'Grades 0 to 5','pt':'Graus 0 a 5'},
 'gr_word': {'es':'Grado','en':'Grade','pt':'Grau'},
 'gr_you': {
  'es':'La humanidad hoy: Φ ≈ 0,002 · Grado 0, fase 0-B, unas cuarenta veces por debajo del Grado 1.',

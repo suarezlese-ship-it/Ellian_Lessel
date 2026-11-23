@@ -49,7 +49,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .ico[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
 .ico[aria-disabled="true"]:hover{transform:none;border-color:var(--line)}
 .burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--tx);cursor:pointer}
-@media (max-width:1179px){
+@media (max-width:1239px){
   .burger{display:inline-grid;place-items:center}
   .menu{position:fixed;inset:68px 0 auto 0;flex-direction:column;align-items:stretch;background:#0B0F19f5;padding:1rem 1.25rem 1.5rem;gap:.2rem;border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .3s;visibility:hidden}
   .menu.open{transform:none;visibility:visible}
@@ -335,7 +335,7 @@ footer.site{border-top:1px solid #ffffff12;padding:3rem 0 2rem;background:#070a1
 .langs a{min-width:40px;min-height:38px;display:grid;place-items:center;padding:0 .5rem;border-radius:9px;font:700 .78rem/1 var(--f-mono);letter-spacing:.08em;color:var(--mut);text-decoration:none}
 .langs a[aria-current="true"]{background:var(--gold);color:#1a1405}
 .langs a:hover{color:var(--white)}
-@media (max-width:1179px){.langs{margin:.6rem 0 0;align-self:flex-start}}
+@media (max-width:1239px){.langs{margin:.6rem 0 0;align-self:flex-start}}
 .menu a.on-page{color:var(--white);background:#ffffff0d}
 .lang-note{display:inline-flex;align-items:center;gap:.5rem;font:600 .82rem/1.3 var(--f-mono);color:var(--gold2);border:1px solid #D4A72C55;background:#D4A72C12;border-radius:999px;padding:.5rem .9rem;margin:-1rem 0 1.6rem}
 .gloss{margin:0;font-size:.85rem;color:var(--mut);font-style:italic}
@@ -405,7 +405,7 @@ select:focus{outline:none;border-color:var(--gold2);box-shadow:0 0 0 3px #D4A72C
 @media (max-width:560px){.related{grid-template-columns:80px 1fr}}
 .post img,.article figure img{height:auto}
 .menu a{white-space:nowrap}
-@media (min-width:1180px) and (max-width:1440px){.menu a{padding:.5rem .45rem;font-size:.85rem}.social{margin-left:.3rem}.langs{margin-left:.3rem}.brand-txt b{letter-spacing:.14em}}
+@media (min-width:1240px) and (max-width:1440px){.menu a{padding:.5rem .45rem;font-size:.85rem}.social{margin-left:.3rem}.langs{margin-left:.3rem}.brand-txt b{letter-spacing:.14em}}
 .brand{flex:none}
 .vimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ghost-cover{background:radial-gradient(ellipse at 50% 42%,#c084fc55,transparent 55%),radial-gradient(ellipse at 30% 80%,#1E3A8A66,transparent 60%),linear-gradient(180deg,#140b2e,#070a12)}

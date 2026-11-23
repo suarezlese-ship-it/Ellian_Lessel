@@ -74,7 +74,7 @@ def post_card(lang, p, root):
 
 def person_ld(lang):
     return {"@type": "Person", "@id": BASE + "#autor", "name": "Ellian Lessel", "url": BASE,
-            "sameAs": ["https://www.instagram.com/ellian.lessel/", "https://www.goodreads.com/user/show/206427856-ellian-lessel"],
+            "sameAs": ["https://amazon.com/author/ellian.lessel", "https://www.instagram.com/ellian.lessel/", "https://www.goodreads.com/user/show/206427856-ellian-lessel"],
             "homeLocation": {"@type": "Place", "name": "Montevideo, Uruguay"}}
 
 def build_home(lang):
